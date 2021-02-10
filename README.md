@@ -1,18 +1,18 @@
 # Nome do projeto
 
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 ## Alunos integrantes da equipe
 
 * Nome completo do aluno 1
 * Nome completo do aluno 2
-* Nome completo do aluno 3
+* Vinicius George dos Santos
 * Nome completo do aluno 4
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Joyce Christina De Paiva Carvalho
+* Juliana Amaral Baroni De Carvalho
 
 ## Instruções de utilização
 
