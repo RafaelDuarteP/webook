@@ -1,6 +1,6 @@
-# Nome do projeto
+# WeBook
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+Uma plataforma para emprestimo e troca de livros entre diferentes pessoas
 
 ## Alunos integrantes da equipe
 
