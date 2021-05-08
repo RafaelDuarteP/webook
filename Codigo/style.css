@@ -1,13 +1,13 @@
-header{
+header {
     background: #0faedf;
     padding: 10px 50px !important;
 }
 
-.logo{
+.logo {
     max-height: 60px;
 }
 
-.btn-header{
+.btn-header {
     background: blue;
     color: white;
     font-size: large;
@@ -18,11 +18,11 @@ header{
     margin: 0px 15px;
 }
 
-.btn-header:hover{
+.btn-header:hover {
     box-shadow: 0px 0px 10px black;
 }
 
-.link-header{
+.link-header {
     color: black;
     text-decoration: none;
     font-size: large;
@@ -30,29 +30,29 @@ header{
     transition: all 50ms;
 }
 
-.link-header:hover{
+.link-header:hover {
     text-decoration: underline;
     color: black;
 }
 
-.pesquisa{
+.pesquisa {
     padding: 5%;
     background: #0faedf;
 }
 
-.label-search{
+.label-search {
     text-align: center;
     color: white;
     font-size: 28pt;
 }
 
-#search{
+#search {
     height: 40px;
     width: 50%;
     margin: 0px 10px;
 }
 
-.btn-search{
+.btn-search {
     height: 40px;
     width: 40px;
     border: none;
@@ -60,36 +60,34 @@ header{
     color: #0faedf;
 }
 
-.card-livro{
+.card-livro {
     padding: 0px;
     transition: box-shadow 100ms 20ms;
 }
 
-.card-livro:hover{
+.card-livro:hover {
     box-shadow: 5px 0px 20px black;
 }
 
-.about-us{
+.about-us {
     background: #0faedf;
     margin-top: 100px;
     padding: 15px 0px;
 }
 
-
-
-.foto-integrante{
+.foto-integrante {
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 50px;
     left: 35px;
 }
 
-.foto-integrante img{
+.foto-integrante img {
     width: 150px;
     object-fit: cover;
 }
 
-.infos-integrante{
+.infos-integrante {
     margin-top: 75px;
     background: rgba(0, 0, 0, 0.5);
     padding-top: 75px;
@@ -97,16 +95,105 @@ header{
     color: white;
 }
 
-.midias-integrante{
+.midias-integrante {
     padding: 0px 20px;
 }
 
-.midias-integrante a{
+.midias-integrante a {
     color: white;
 }
 
-footer{
+footer {
     background: #0faedf;
     color: white;
     padding: 10px 30px;
+}
+
+.lbl-text {
+    text-align: start;
+    text-indent: 15px;
+    font-weight: 500;
+    font-size: 16pt;
+    color: #0faedf;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px #0faedf solid;
+}
+
+.btn-envio {
+    margin-top: 20px;
+    background: #0faedf;
+    color: white;
+    height: 30px;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+}
+
+.bg-padrao {
+    background: #0faedf;
+    color: white;
+}
+
+.bg-blue {
+    background: blue;
+    color: white;
+}
+
+.color-padrao {
+    color: #0faedf;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.link-defaut {
+    color: #0faedf;
+    text-decoration: none;
+}
+
+.link-defaut:hover {
+    color: #0faedf;
+    text-decoration: underline;
+}
+
+.link-destaque {
+    color: blue;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.link-destaque:hover {
+    color: blue;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.tam-1 {
+    font-size: 12pt;
+}
+
+.tam-2 {
+    font-size: 16pt;
+}
+
+.tam-3 {
+    font-size: 20pt;
+}
+
+.tam-4 {
+    font-size: 24pt;
+}
+
+.tam-5 {
+    font-size: 30pt;
 }
