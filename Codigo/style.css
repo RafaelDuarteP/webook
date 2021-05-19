@@ -104,6 +104,7 @@ header {
 }
 
 footer {
+    margin-top: 30px;
     background: #0faedf;
     color: white;
     padding: 10px 30px;
@@ -117,7 +118,7 @@ footer {
     color: #0faedf;
 }
 
-input {
+input , .select {
     height: 30px;
     width: 100%;
     border-radius: 15px;
