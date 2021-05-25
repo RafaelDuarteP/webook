@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS usuario (
     numero_casa INT NOT NULL,
     complemento VARCHAR(50),
     cep CHAR(8) NOT NULL,
-    PRIMARY KEY (id_usuario)
+    PRIMARY KEY (id_usuario, email)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 truncate table usuario;
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS livro (
     GENERO VARCHAR(30) NOT NULL,
     TITULO VARCHAR(100) NOT NULL,
     EDICAO INT NOT NULL,
-    NUMERO_PAGINAS TINYINT NOT NULL,
+    NUMERO_PAGINAS INT NOT NULL,
     IDIOMA VARCHAR(30) NOT NULL,
     ANO YEAR NOT NULL,
     EDITORA VARCHAR(30) NOT NULL,
@@ -36,55 +36,31 @@ CREATE TABLE IF NOT EXISTS livro (
     STATUS_LIVRO ENUM('Disponivel', 'Em processo', 'Indisponivel') NOT NULL,
     id_usuario INT NOT NULL,
     PRIMARY KEY (id_livro),
-    FOREIGN KEY (id_usuario)
+    CONSTRAINT fk_usuario FOREIGN KEY (id_usuario)
         REFERENCES usuario (id_usuario)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
 
 truncate table livro;
 
-CREATE TABLE IF NOT EXISTS doacao (
-    id_doacao INT NOT NULL AUTO_INCREMENT,
-    destino INT NOT NULL,
-    id_livro INT NOT NULL,
-    data_doacao DATE NOT NULL,
-    PRIMARY KEY (id_doacao),
-    FOREIGN KEY (destino)
-        REFERENCES usuario (id_usuario),
-    FOREIGN KEY (id_livro)
-        REFERENCES livro (id_livro)
-)  ENGINE=INNODB DEFAULT CHARSET=UTF8;
-
-truncate table doacao;
-
-CREATE TABLE IF NOT EXISTS emprestimo (
-    id_emprestimo INT NOT NULL AUTO_INCREMENT,
-    destino INT NOT NULL,
-    id_livro INT NOT NULL,
-    data_emprestimo DATE NOT NULL,
-    prazo INT NOT NULL,
-    PRIMARY KEY (id_emprestimo),
-    FOREIGN KEY (destino)
-        REFERENCES usuario (id_usuario),
-    FOREIGN KEY (id_livro)
-        REFERENCES livro (id_livro)
-)  ENGINE=INNODB DEFAULT CHARSET=UTF8;
-
-truncate table emprestimo;
-
-CREATE TABLE IF NOT EXISTS troca (
-    id_troca INT NOT NULL AUTO_INCREMENT,
-    data_troca DATE NOT NULL,
-    id_livro_1 INT NOT NULL,
-    id_livro_2 INT NOT NULL,
-    cod_usuario_1 INT NOT NULL,
-    cod_usuario_2 INT NOT NULL,
-    PRIMARY KEY (id_troca),
-    FOREIGN KEY (id_livro_1)
+CREATE TABLE IF NOT EXISTS operacao (
+    id_op INT NOT NULL AUTO_INCREMENT,
+    TIPO ENUM('Doação', 'Empréstimo', 'Troca') NOT NULL,
+    DATA_OP YEAR NOT NULL,
+    STATUS_OP ENUM('Aberta', 'Fechada') NOT NULL,
+    DATA_FINAL_OP YEAR NOT NULL,
+    LIVRO_1 INT NOT NULL,
+    LIVRO_2 INT,
+    USUARIO_1 INT NOT NULL,
+    USUARIO_2 INT,
+    PRIMARY KEY (id_op),
+    CONSTRAINT fk_livro_1 FOREIGN KEY (livro_1)
         REFERENCES livro (id_livro),
-    FOREIGN KEY (id_livro_2)
+    CONSTRAINT fk_livro_2 FOREIGN KEY (livro_2)
         REFERENCES livro (id_livro),
-    FOREIGN KEY (cod_usuario_1)
+    CONSTRAINT fk_user_1 FOREIGN KEY (usuario_1)
         REFERENCES usuario (id_usuario),
-    FOREIGN KEY (cod_usuario_2)
+    CONSTRAINT fk_user_2 FOREIGN KEY (usuario_2)
         REFERENCES usuario (id_usuario)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
+
+truncate table operacao;
