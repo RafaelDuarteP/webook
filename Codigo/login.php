@@ -8,7 +8,7 @@ $email = $_POST('usuario');
 $senha = md5($_POST('senha'));
 
 if (empty($email) || empty($senha)){
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 
@@ -21,11 +21,11 @@ $result = $connect->query($query);
 
 if ($result != null){
     $_SESSION['user'] = $result;
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }else{
     $_SESSION['user'] = null;
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 

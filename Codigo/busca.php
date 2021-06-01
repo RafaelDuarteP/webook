@@ -5,7 +5,7 @@
     $search = $_GET['search'];
 
     if (empty($query)){
-        header('location: index.html');
+        header('location: index.php');
         exit();
     }
 
