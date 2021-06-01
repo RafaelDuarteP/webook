@@ -2,7 +2,7 @@
 
     require_once 'conexao.class.php';
 
-    $query = $_GET['search'];
+    $search = $_GET['search'];
 
     if (empty($query)){
         header('location: index.html');
@@ -12,8 +12,8 @@
     $conect = new conexao();
 
     $query = "select ISBN from livro
-    where titulo LIKE ('$query') or
-    autor LIKE ('$query');";
+    where titulo LIKE ('%$search%') or
+    autor LIKE ('%$search%');";
 
     $result = $conect->query($query);
 

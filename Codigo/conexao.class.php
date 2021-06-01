@@ -9,11 +9,11 @@ class conexao {
     private $banco; // armazena qual base de dados a ser usada
     private $conexao; // armazena a conexao
 
-    function __constructor($host,$user,$senha,$banco){
-        $this->host = $host;
-        $this->user = $user;
-        $this->senha = $senha;
-        $this->banco = $banco;
+    function __constructor(){
+        $this->host = "";
+        $this->user = "";
+        $this->senha = "";
+        $this->banco = "";
         $con = mysqli_connect($this->host,$this->user,$this->senha,$this->banco);
 
         if ($con == false)
