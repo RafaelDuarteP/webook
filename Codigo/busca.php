@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'conexao.class.php';
+    require_once 'conexao.php';
 
     $search = $_GET['search'];
 
@@ -9,13 +9,11 @@
         exit();
     }
 
-    $conect = new conexao();
-
     $query = "select ISBN from livro
     where titulo LIKE ('%$search%') or
     autor LIKE ('%$search%');";
 
-    $result = $conect->query($query);
+    $result = mysqli_query($conexao,$query);
 
     
 

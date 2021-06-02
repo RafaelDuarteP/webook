@@ -1,10 +1,8 @@
 <?php
 
-require_once 'conexao.class.php';
+require_once 'conexao.php';
 
 session_start();
-
-$connect = new conexao();
 
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = null;
@@ -12,7 +10,7 @@ if (!isset($_SESSION['user'])) {
     $id_usuario = $_SESSION['user'];
     $query = "select nome from usuario where id_usuario = $id_usuario ;";
 
-    $nomeUsuario = $connect->query($query);
+    $nomeUsuario = mysqli_query($conexao,$query);
 }
 
 ?>
