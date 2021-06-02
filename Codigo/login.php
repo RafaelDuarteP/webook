@@ -16,7 +16,9 @@ if (empty($email) || empty($senha)){
 $query = "select id_usuario from usuario
 where email = '$email' and senha = '$senha';";
 
-$result = mysqli_query($conexao,$query);
+$request = mysqli_query($conexao,$query);
+$result = mysqli_fetch_assoc($request);
+
 
 if ($result != null){
     $_SESSION['user'] = $result;
@@ -24,7 +26,7 @@ if ($result != null){
     exit();
 }else{
     $_SESSION['user'] = null;
-    header("Location: index.php");
+    header("Location: login.html");
     exit();
 }
 

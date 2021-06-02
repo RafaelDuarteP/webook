@@ -7,10 +7,12 @@ session_start();
 if (!isset($_SESSION['user'])) {
     $_SESSION['user'] = null;
 } elseif ($_SESSION['user'] != null) {
-    $id_usuario = $_SESSION['user'];
+    $id_usuario = $_SESSION['user']['id_usuario'];
     $query = "select nome from usuario where id_usuario = $id_usuario ;";
 
-    $nomeUsuario = mysqli_query($conexao,$query);
+    $request = mysqli_query($conexao,$query);
+    $nomeUsuario = mysqli_fetch_assoc($request);
+    $nomeUsuario = $nomeUsuario['nome'];
 }
 
 ?>

@@ -13,7 +13,7 @@
     where titulo LIKE ('%$search%') or
     autor LIKE ('%$search%');";
 
-    $result = mysqli_query($conexao,$query);
+    $request = mysqli_query($conexao,$query);
 
     
 
