@@ -119,6 +119,8 @@ footer {
 }
 
 input , .select {
+    color: #0faedf;
+    text-indent: 10px;
     height: 30px;
     width: 100%;
     border-radius: 15px;

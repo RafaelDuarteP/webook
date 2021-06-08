@@ -6,6 +6,6 @@
     $user = "";
     $senha = "";
     $banco = "";
-    $conexao = mysqli_connect($this->host,$this->user,$this->senha,$this->banco);
+    $conexao = mysqli_connect($host,$user,$senha,$banco);
 
 ?>

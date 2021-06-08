@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS livro (
     EDITORA VARCHAR(30) NOT NULL,
     AUTOR VARCHAR(30) NOT NULL,
     TIPO ENUM('Doação', 'Empréstimo', 'Troca') NOT NULL,
-    STATUS_LIVRO ENUM('Disponivel', 'Em processo', 'Indisponivel') NOT NULL,
+    STATUS_LIVRO ENUM('Disponivel', 'Em processo', 'Indisponivel') NOT NULL DEFAULT 'disponivel',
     id_usuario INT NOT NULL,
     PRIMARY KEY (id_livro),
     CONSTRAINT fk_usuario FOREIGN KEY (id_usuario)
