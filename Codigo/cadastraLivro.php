@@ -6,7 +6,7 @@ session_start();
 
 if (!isset($_SESSION['user'])) {
     alerta("Você precisa efetuar login para cadastrar um livro");
-    header('Location: login.html');
+    echo "<script language='javascript'>window.location='login.html';</script>";
     exit();
 }
 

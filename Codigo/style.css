@@ -118,7 +118,7 @@ footer {
     color: #0faedf;
 }
 
-input , .select {
+input, .select {
     color: #0faedf;
     text-indent: 10px;
     height: 30px;
@@ -199,4 +199,13 @@ input , .select {
 
 .tam-5 {
     font-size: 30pt;
+}
+
+.sair {
+    background: rgba(255, 255, 255, 0.432);
+}
+
+.sair a {
+    color: black;
+    text-indent: 2 0px;
 }

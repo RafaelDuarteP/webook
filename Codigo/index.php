@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
     $id_usuario = $_SESSION['user']['id_usuario'];
     $query = "select nome from usuario where id_usuario = $id_usuario ;";
 
-    $request = mysqli_query($conexao,$query);
+    $request = mysqli_query($conexao, $query);
     $nomeUsuario = mysqli_fetch_assoc($request);
     $nomeUsuario = $nomeUsuario['nome'];
 }
@@ -46,7 +46,12 @@ if (!isset($_SESSION['user'])) {
                     if ($_SESSION['user'] != null) :
                     ?>
                         <div class="col-auto">
-                            <a class="link-header" href="#"><?php echo $nomeUsuario; ?></a>
+                            <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $nomeUsuario; ?>
+                            </a>
+                            <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
+                                <li><a href="./logoff.php">Sair</a></li>
+                            </ul>
                         </div>
 
                     <?php
@@ -54,17 +59,17 @@ if (!isset($_SESSION['user'])) {
                     ?>
 
                         <div class="col-auto">
-                            <a class="link-header" href="#">Login</a>
+                            <a class="link-header" href="./Login.html">Login</a>
                         </div>
 
                     <?php
                     endif;
                     ?>
                     <div class="col-auto">
-                        <button type="button" class="btn-header">Cadastrar livro</button>
+                        <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn-header <?php if ($_SESSION['user'] != null) echo 'disbled'; ?>">Cadastre-se</button>
+                        <button onclick="window.location.href ='./cadastroUsuario.html' " type="button" class="btn-header <?php if ($_SESSION['user'] != null) echo 'disbled'; ?>">Cadastre-se</button>
                     </div>
                 </div>
             </div>
