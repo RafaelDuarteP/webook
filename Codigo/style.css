@@ -209,3 +209,14 @@ input, .select {
     color: black;
     text-indent: 2 0px;
 }
+
+.info-livro{
+    margin-top: 30px;
+    padding: 10px 0px;
+}
+
+.empr-livro{
+    padding: 30px;
+    border: black 1px solid;
+    margin-bottom: 100px;
+}
