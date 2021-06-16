@@ -1,3 +1,22 @@
+<?php
+
+require_once 'conexao.php';
+
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = null;
+} elseif ($_SESSION['user'] != null) {
+    $id_usuario = $_SESSION['user']['id_usuario'];
+    $query = "select nome from usuario where id_usuario = $id_usuario ;";
+
+    $request = mysqli_query($conexao, $query);
+    $nomeUsuario = mysqli_fetch_assoc($request);
+    $nomeUsuario = $nomeUsuario['nome'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,22 +42,47 @@
             <div class="col-3">
                 <a href="./"><img class="logo" src="./img/default-image.jpg" alt="logo"></a>
             </div>
-            <!--Menu de botões--
             <div class="col-auto">
                 <div class="row">
+                    <?php
+                    if ($_SESSION['user'] != null) :
+                    ?>
+                        <div class="col-auto">
+                            <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $nomeUsuario; ?>
+                            </a>
+                            <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
+                                <li><a href="./logoff.php">Sair</a></li>
+                            </ul>
+                        </div>
+
+                    <?php
+                    else :
+                    ?>
+
+                        <div class="col-auto">
+                            <a class="link-header" href="./Login.html">Login</a>
+                        </div>
+
+                    <?php
+                    endif;
+                    ?>
                     <div class="col-auto">
-                        <a class="link-header" href="#">Login</a>
+                        <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                     </div>
                     <div class="col-auto">
-                        <button type="button" class="btn-header">Cadastrar livro</button>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" class="btn-header">Cadastre-se</button>
+                        <button onclick="window.location.href ='./cadastroUsuario.html' " type="<?php if ($_SESSION['user'] != null) echo 'disbled'; else echo 'button';?>" class="btn-header">Cadastre-se</button>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </div>
     </header>
+
+    <?php
+    if (!empty($_GET['id'])){
+        $query = "";
+    }
+    ?>
 
     <section class="container-xl">
 
