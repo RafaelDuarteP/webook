@@ -12,9 +12,10 @@ if (!isset($_SESSION['user'])) {
 
 $livro = $_POST['livro'];
 $tipo = str_replace('çã','ca',$_POST['tipo']);
-$data = $_POST['data'];
+$data = date('Y-m-d');
 $user1 = $_POST['user_1'];
 $user2 = $_POST['user_2'];
+
 
 
 $query = "INSERT INTO `webook`.`operacao` (`TIPO`, `DATA_OP`, `STATUS_OP`, `LIVRO_1`, `USUARIO_1`, `USUARIO_2`) 

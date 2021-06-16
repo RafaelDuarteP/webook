@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS usuario (
     cidade VARCHAR(50) NOT NULL,
     estado CHAR(2) NOT NULL,
     numero_casa INT NOT NULL,
-    complemento VARCHAR(50),
     cep CHAR(8) NOT NULL,
     PRIMARY KEY (id_usuario, email)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8;
@@ -32,7 +31,7 @@ CREATE TABLE IF NOT EXISTS livro (
     ANO YEAR NOT NULL,
     EDITORA VARCHAR(30) NOT NULL,
     AUTOR VARCHAR(30) NOT NULL,
-    TIPO ENUM('Doação', 'Empréstimo', 'Troca') NOT NULL,
+    TIPO ENUM('Doacao', 'Emprestimo') NOT NULL,
     STATUS_LIVRO ENUM('Disponivel', 'Em processo', 'Indisponivel') NOT NULL DEFAULT 'disponivel',
     id_usuario INT NOT NULL,
     PRIMARY KEY (id_livro),
@@ -44,18 +43,15 @@ truncate table livro;
 
 CREATE TABLE IF NOT EXISTS operacao (
     id_op INT NOT NULL AUTO_INCREMENT,
-    TIPO ENUM('Doação', 'Empréstimo', 'Troca') NOT NULL,
-    DATA_OP YEAR NOT NULL,
+    TIPO ENUM('Doacao', 'Emprestimo') NOT NULL,
+    DATA_OP DATE NOT NULL,
     STATUS_OP ENUM('Aberta', 'Fechada') NOT NULL,
-    DATA_FINAL_OP YEAR NOT NULL,
-    LIVRO_1 INT NOT NULL,
-    LIVRO_2 INT,
+    DATA_FINAL_OP DATE DEFAULT NULL,
+    LIVRO_1 INT NOT NULL UNIQUE,
     USUARIO_1 INT NOT NULL,
-    USUARIO_2 INT,
+    USUARIO_2 INT NOT NULL,
     PRIMARY KEY (id_op),
     CONSTRAINT fk_livro_1 FOREIGN KEY (livro_1)
-        REFERENCES livro (id_livro),
-    CONSTRAINT fk_livro_2 FOREIGN KEY (livro_2)
         REFERENCES livro (id_livro),
     CONSTRAINT fk_user_1 FOREIGN KEY (usuario_1)
         REFERENCES usuario (id_usuario),

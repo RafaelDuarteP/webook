@@ -43,46 +43,46 @@
     <section class="container-lg">
         <div class="row justify-content-center">
             <h1 class="text-center color-padrao">Cadastrar novo usuário</h1>
-            <form action="" method="post" class="col-8">
+            <form action="cadastroUsuario.php" method="post" class="col-8" novalidate>
                 <div class="row">
                     <div class="col-12">
-                        <label for="nome" class="lbl-text col-12">Nome Completo</label>
+                        <label required for="nome" class="lbl-text col-12">Nome Completo </label>
                         <input type="text" name="nome" id="nome">
                     </div>
                     <div class="col-12">
-                        <label for="email" class="lbl-text col-12">Email</label>
+                        <label required for="email" class="lbl-text col-12">Email </label>
                         <input type="email" name="email" id="email">
                     </div>
                     <div class="col-12">
-                        <label for="senha" class="lbl-text col-12">Senha</label>
+                        <label required for="senha" class="lbl-text col-12">Senha </label>
                         <input type="password" name="senha" id="senha">
                     </div>
                     <div class="col-12">
-                        <label for="telefone" class="lbl-text col-12">Telefone</label>
+                        <label required for="telefone" class="lbl-text col-12">Telefone </label>
                         <input type="tel" name="telefone" id="telefone">
                     </div>
                     <div class="col-12">
-                        <label for="cep" class="lbl-text col-12">CEP</label>
+                        <label required for="cep" class="lbl-text col-12">CEP </label>
                         <input type="text" name="cep" id="cep">
                     </div>
                     <div class="col-9">
-                        <label for="logradouro" class="lbl-text col-12">Logradouro</label>
+                        <label required for="logradouro" class="lbl-text col-12">Logradouro </label>
                         <input type="text" name="logradouro" id="logradouro">
                     </div>
                     <div class="col-3">
-                        <label for="numero" class="lbl-text col-12">Número</label>
+                        <label required for="numero" class="lbl-text col-12">Número </label>
                         <input type="text" name="numero" id="numero">
                     </div>
                     <div class="col-12">
-                        <label for="bairro" class="lbl-text col-12">Bairro</label>
+                        <label required for="bairro" class="lbl-text col-12">Bairro </label>
                         <input type="text" name="bairro" id="bairro">
                     </div>
                     <div class="col-9">
-                        <label for="cidade" class="lbl-text col-12">Cidade</label>
+                        <label required for="cidade" class="lbl-text col-12">Cidade </label>
                         <input type="text" name="cidade" id="cidade">
                     </div>
                     <div class="col-3">
-                        <label for="cidade" class="lbl-text col-12">Estado</label>
+                        <label required for="cidade" class="lbl-text col-12">Estado </label>
                         <select name="estado" id="estado" class="select lbl-text col-12">
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -148,6 +148,7 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./validacaoFormulario.js"></script>
 </body>
 
 </html>

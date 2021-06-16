@@ -70,7 +70,7 @@ if (!isset($_SESSION['user'])) {
                         <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                     </div>
                     <div class="col-auto">
-                        <button onclick="window.location.href ='./cadastroUsuario.html' " disabled="<?php if ($_SESSION['user'] != null) echo 'disbled';?>" type="button" class="btn-header">Cadastre-se</button>
+                        <button onclick="window.location.href ='./cadastroUsuario.html' " <?php if ($_SESSION['user'] != null) echo "disabled";?> type="button" class="btn-header">Cadastre-se</button>
                     </div>
                 </div>
             </div>
