@@ -42,8 +42,8 @@ if (!isset($_SESSION['user'])) {
             </div>
             <!--Menu de botões-->
             <button class="col-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#buttonsMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-ellipsis-v"></i>
-                </button>
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
             <div class="col-12 col-md-auto">
                 <div class="collapse navbar-collapse  mt-2 mt-lg-0" id="buttonsMenu">
                     <div class="row justify-content-end">
@@ -107,94 +107,68 @@ if (!isset($_SESSION['user'])) {
             <h3 class="col-12">
                 Livros para empréstimo
             </h3>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
+            <?php
+            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'emprestimo'";
+            $request = mysqli_query($conexao, $query);
+            $result = mysqli_fetch_all($request);
+
+            for ($i =0; $i < mysqli_num_rows($request) && $i <10; $i++) {
+                $livro = $result[$i];
+                $id_livro = $livro[4];
+                $titulo = $livro[0];
+                $editora = $livro[1];
+                $edicao = $livro[3];
+                $autor = $livro[2];
+
+                echo "
+                    <div class='col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro'>
+                <a href='livro.php?id=$id_livro'>
+                    <div>
+                    <h1>$titulo</h1>
+                    <p>$editora</p>
+                    <p>$autor</p>
+                    <p>$edicao ª edição</p>
+                    </div>
                 </a>
             </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
+                    ";
+            }
+            ?>
         </div>
 
         <div class="row justify-content-evenly mt-5">
             <h3 class="col-12">
                 Livros para doação
             </h3>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
+            <?php
+            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'doacao'";
+            $request = mysqli_query($conexao, $query);
+            $result = mysqli_fetch_all($request);
+
+            for ($i =0; $i < mysqli_num_rows($request) && $i <10; $i++) {
+                $livro = $result[$i];
+                $id_livro = $livro[4];
+                $titulo = $livro[0];
+                $editora = $livro[1];
+                $edicao = $livro[3];
+                $autor = $livro[2];
+
+                echo "
+                    <div class='col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro'>
+                <a href='livro.php?id=$id_livro'>
+                    <div>
+                    <h1>$titulo</h1>
+                    <p>$editora</p>
+                    <p>$autor</p>
+                    <p>$edicao ª edição</p>
+                    </div>
                 </a>
             </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
+                    ";
+            }
+            ?>
         </div>
 
-        <div class="row justify-content-evenly mt-5">
-            <h3 class="col-12">
-                Livros para trocar
-            </h3>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
-                <a href="#">
-                    <img class="w-100" src="./img/default-image.jpg" alt="">
-                </a>
-            </div>
-        </div>
     </section>
 
     <!--Container Sobre nós-->

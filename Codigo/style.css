@@ -61,8 +61,16 @@ header {
 }
 
 .card-livro {
-    padding: 0px;
+    background: #163e4b80 ;
+    min-height: 200px;
+    padding: 10px;
     transition: box-shadow 100ms 20ms;
+}
+
+.card-livro a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .card-livro:hover {
