@@ -28,6 +28,7 @@ if (!isset($_SESSION['user'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <!--Link do FontAwesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/WeBookShortcut.png" type="image/x-icon">
     <title>WeBook</title>
     <link type="text/css" rel="stylesheet" href="style.css">
 </head>
@@ -37,7 +38,7 @@ if (!isset($_SESSION['user'])) {
     <header class="container-fluid">
         <div class="row align-items-center justify-content-between">
             <div class="col-3">
-                <img class="logo" src="./img/default-image.jpg" alt="logo">
+                <img class="logo" src="./img/WeBookLogo.png" alt="logo">
             </div>
             <!--Menu de botões-->
             <div class="col-auto">
@@ -311,7 +312,7 @@ if (!isset($_SESSION['user'])) {
                 </p>
             </div>
             <div class="col-auto">
-                <img src="./img/default-image.jpg" alt="logo" class="logo">
+                <img src="./img/WeBookLogo.png" alt="logo" class="logo">
             </div>
         </div>
     </footer>
