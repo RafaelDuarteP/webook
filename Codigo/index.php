@@ -36,45 +36,52 @@ if (!isset($_SESSION['user'])) {
 <body>
     <!--Cabeçalho-->
     <header class="container-fluid">
-        <div class="row align-items-center justify-content-between">
+        <nav class="navbar navbar-expand-md align-items-center justify-content-between">
             <div class="col-3">
-                <img class="logo" src="./img/WeBookLogo.png" alt="logo">
+                <img class="mx-auto logo" src="./img/WeBookLogo.png" alt="logo">
             </div>
             <!--Menu de botões-->
-            <div class="col-auto">
-                <div class="row">
-                    <?php
-                    if ($_SESSION['user'] != null) :
-                    ?>
-                        <div class="col-auto">
-                            <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $nomeUsuario; ?>
-                            </a>
-                            <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
-                                <li><a href="./logoff.php">Sair</a></li>
-                            </ul>
+            <button class="col-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#buttonsMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            <div class="col-12 col-md-auto">
+                <div class="collapse navbar-collapse  mt-2 mt-lg-0" id="buttonsMenu">
+                    <div class="row justify-content-end">
+                        <?php
+                        if ($_SESSION['user'] != null) :
+                        ?>
+                            <div class="col-12 col-md-auto mt-4">
+                                <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo $nomeUsuario; ?>
+                                </a>
+                                <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
+                                    <li><a href="./logoff.php">Sair</a></li>
+                                </ul>
+                            </div>
+
+                        <?php
+                        else :
+                        ?>
+
+                            <div class="col-12 col-md-auto mt-4">
+                                <a class="link-header" href="./Login.html">Login</a>
+                            </div>
+
+                        <?php
+                        endif;
+                        ?>
+                        <div class="col-12 col-md-auto mt-4">
+                            <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                         </div>
-
-                    <?php
-                    else :
-                    ?>
-
-                        <div class="col-auto">
-                            <a class="link-header" href="./Login.html">Login</a>
+                        <div class="col-12 col-md-auto mt-4">
+                            <button onclick="window.location.href ='./cadastroUsuario.html' " <?php if ($_SESSION['user'] != null) echo "disabled"; ?> type="button" class="btn-header">Cadastre-se</button>
                         </div>
-
-                    <?php
-                    endif;
-                    ?>
-                    <div class="col-auto">
-                        <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
-                    </div>
-                    <div class="col-auto">
-                        <button onclick="window.location.href ='./cadastroUsuario.html' " <?php if ($_SESSION['user'] != null) echo "disabled";?> type="button" class="btn-header">Cadastre-se</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
+
+
     </header>
 
     <!--Container de busca-->
@@ -100,27 +107,27 @@ if (!isset($_SESSION['user'])) {
             <h3 class="col-12">
                 Livros para empréstimo
             </h3>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
@@ -131,27 +138,27 @@ if (!isset($_SESSION['user'])) {
             <h3 class="col-12">
                 Livros para doação
             </h3>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
@@ -162,27 +169,27 @@ if (!isset($_SESSION['user'])) {
             <h3 class="col-12">
                 Livros para trocar
             </h3>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
             </div>
-            <div class="col-2 card-livro">
+            <div class="col-10 col-md-4 col-lg-2 my-2 mx-2 card-livro">
                 <a href="#">
                     <img class="w-100" src="./img/default-image.jpg" alt="">
                 </a>
@@ -198,13 +205,13 @@ if (!isset($_SESSION['user'])) {
                 Sobre Nós
             </h1>
             <p class="text-justify col-8">
-                
+
                 Somos um grupo de estudantes de Engenharia de Software pela PUC - Minas e esse site trata-se de um projeto da disciplina TRABALHO INTERDISCIPLINAR: APLICAÇÕES PARA PROCESSOS DE NEGÓCIOS.
             </p>
         </div>
         <!--Cards de integrantes-->
         <div class="row justify-content-evenly">
-            <div class="col-2 card-integrante position-relative">
+            <div class="col-10 col-md-5 col-lg-3 mt-3 card-integrante position-relative">
                 <div class="foto-integrante position-absolute">
                     <img src="./img/default-image.jpg" alt="">
                 </div>
@@ -228,7 +235,7 @@ if (!isset($_SESSION['user'])) {
                     <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
-            <div class="col-2 card-integrante position-relative">
+            <div class="col-10 col-md-5 col-lg-3 mt-3 card-integrante position-relative">
                 <div class="foto-integrante position-absolute">
                     <img src="./img/default-image.jpg" alt="">
                 </div>
@@ -242,7 +249,7 @@ if (!isset($_SESSION['user'])) {
                         <a class="col-auto" href="https://github.com/rodolfo12381">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
-                        <a class="col-auto"  href="mailto:rodolforrodrigues14@gmail.com">
+                        <a class="col-auto" href="mailto:rodolforrodrigues14@gmail.com">
                             <i class="fas fa-at fa-2x"></i>
                         </a>
                         <a class="col-auto" href="https://www.linkedin.com/in/rodolfo-rocha-rodrigues-a834b1205/">
@@ -252,7 +259,7 @@ if (!isset($_SESSION['user'])) {
                     <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
-            <div class="col-2 card-integrante position-relative">
+            <div class="col-10 col-md-5 col-lg-3 mt-3 card-integrante position-relative">
                 <div class="foto-integrante position-absolute">
                     <img src="./img/default-image.jpg" alt="">
                 </div>
@@ -276,7 +283,7 @@ if (!isset($_SESSION['user'])) {
                     <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
-            <div class="col-2 card-integrante position-relative">
+            <div class="col-10 col-md-5 col-lg-3 mt-3 card-integrante position-relative">
                 <div class="foto-integrante position-absolute">
                     <img src="./img/default-image.jpg" alt="">
                 </div>

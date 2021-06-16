@@ -37,45 +37,52 @@ if (!isset($_SESSION['user'])) {
 <body>
     <!--Cabeçalho-->
     <header class="container-fluid">
-        <div class="row align-items-center justify-content-between">
+        <nav class="navbar navbar-expand-md align-items-center justify-content-between">
             <div class="col-3">
-                <a href="./"><img class="logo" src="./img/WeBookLogo.png" alt="logo"></a>
+                <img class="mx-auto logo" src="./img/WeBookLogo.png" alt="logo">
             </div>
-            <div class="col-auto">
-                <div class="row">
-                    <?php
-                    if ($_SESSION['user'] != null) :
-                    ?>
-                        <div class="col-auto">
-                            <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php echo $nomeUsuario; ?>
-                            </a>
-                            <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
-                                <li><a href="./logoff.php">Sair</a></li>
-                            </ul>
+            <!--Menu de botões-->
+            <button class="col-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#buttonsMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class="col-12 col-md-auto">
+                <div class="collapse navbar-collapse  mt-2 mt-lg-0" id="buttonsMenu">
+                    <div class="row justify-content-end">
+                        <?php
+                        if ($_SESSION['user'] != null) :
+                        ?>
+                            <div class="col-12 col-md-auto mt-4">
+                                <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo $nomeUsuario; ?>
+                                </a>
+                                <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
+                                    <li><a href="./logoff.php">Sair</a></li>
+                                </ul>
+                            </div>
+
+                        <?php
+                        else :
+                        ?>
+
+                            <div class="col-12 col-md-auto mt-4">
+                                <a class="link-header" href="./Login.html">Login</a>
+                            </div>
+
+                        <?php
+                        endif;
+                        ?>
+                        <div class="col-12 col-md-auto mt-4">
+                            <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                         </div>
-
-                    <?php
-                    else :
-                    ?>
-
-                        <div class="col-auto">
-                            <a class="link-header" href="./Login.html">Login</a>
+                        <div class="col-12 col-md-auto mt-4">
+                            <button onclick="window.location.href ='./cadastroUsuario.html' " <?php if ($_SESSION['user'] != null) echo "disabled"; ?> type="button" class="btn-header">Cadastre-se</button>
                         </div>
-
-                    <?php
-                    endif;
-                    ?>
-                    <div class="col-auto">
-                        <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
-                    </div>
-                    <div class="col-auto">
-                        <button onclick="window.location.href ='./cadastroUsuario.html' " type="<?php if ($_SESSION['user'] != null) echo 'disbled';
-                                                                                                else echo 'button'; ?>" class="btn-header">Cadastre-se</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
+
+
     </header>
 
     <?php
@@ -103,7 +110,7 @@ if (!isset($_SESSION['user'])) {
     <section class="container-xl">
 
         <div class="row info-livro">
-            <div class="col-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <img class="w-100" src="./img/default-image.jpg" alt="">
             </div>
             <div class="col-8">
@@ -115,16 +122,16 @@ if (!isset($_SESSION['user'])) {
         </div>
 
         <div class="row align-items-center empr-livro">
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 <h1><?php echo $result['titulo'] ?></h1>
                 <p><?php
-                $id_usuario_1 = $result['id_usuario'];
-                $nomeUsuarioCad = mysqli_fetch_assoc(mysqli_query($conexao,"select nome from usuario where id_usuario = '$id_usuario_1';"));
-                echo $nomeUsuarioCad['nome'];
-                ?></p>
+                    $id_usuario_1 = $result['id_usuario'];
+                    $nomeUsuarioCad = mysqli_fetch_assoc(mysqli_query($conexao, "select nome from usuario where id_usuario = '$id_usuario_1';"));
+                    echo $nomeUsuarioCad['nome'];
+                    ?></p>
                 <p><?php echo $result['tipo'] ?></p>
             </div>
-            <form class="col-4" action="confirma.php" method="post">
+            <form class="col-12 col-lg-4" action="confirma.php" method="post">
                 <input type="hidden" name="livro" value="<?php
                                                             echo $id_livro; ?>">
                 <input type="hidden" name="tipo" value="<?php
