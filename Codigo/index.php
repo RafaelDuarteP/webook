@@ -69,7 +69,7 @@ if (!isset($_SESSION['user'])) {
                         <button onclick="window.location.href ='./cadatroLivro.html' " type="button" class="btn-header">Cadastrar livro</button>
                     </div>
                     <div class="col-auto">
-                        <button onclick="window.location.href ='./cadastroUsuario.html' " type="<?php if ($_SESSION['user'] != null) echo 'disbled'; else echo 'button';?>" class="btn-header">Cadastre-se</button>
+                        <button onclick="window.location.href ='./cadastroUsuario.html' " disabled="<?php if ($_SESSION['user'] != null) echo 'disbled';?>" type="button" class="btn-header">Cadastre-se</button>
                     </div>
                 </div>
             </div>
@@ -197,11 +197,8 @@ if (!isset($_SESSION['user'])) {
                 Sobre Nós
             </h1>
             <p class="text-justify col-8">
-                Descrição do projeto
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laborum quod amet aperiam velit,
-                minus ratione optio sapiente pariatur eveniet doloribus quo ipsa sunt eligendi tempore provident
-                voluptates. Repudiandae delectus aut nihil impedit adipisci aperiam! Reiciendis tempore ipsum sequi esse
-                quae vel recusandae itaque, quaerat quia. Atque voluptate dicta voluptatem!
+                
+                Somos um grupo de estudantes de Engenharia de Software pela PUC - Minas e esse site trata-se de um projeto da disciplina TRABALHO INTERDISCIPLINAR: APLICAÇÕES PARA PROCESSOS DE NEGÓCIOS.
             </p>
         </div>
         <!--Cards de integrantes-->
@@ -211,8 +208,8 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img/default-image.jpg" alt="">
                 </div>
                 <div class="infos-integrante">
-                    <h3 class="text-center">Nome</h3>
-                    <p class="text-center">Descrição</p>
+                    <h3 class="text-center">Rafael Duarte Pereira</h3>
+                    <p class="text-center">Estudante de Engenharia de Software pela PUC - Minas</p>
                     <div class="row midias-integrante justify-content-evenly">
                         <a class="col-auto" href="#">
                             <i class="fab fa-instagram fa-2x"></i>
@@ -227,7 +224,7 @@ if (!isset($_SESSION['user'])) {
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                     </div>
-                    <p class="text-center">Função</p>
+                    <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
             <div class="col-2 card-integrante position-relative">
@@ -235,23 +232,23 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img/default-image.jpg" alt="">
                 </div>
                 <div class="infos-integrante">
-                    <h3 class="text-center">Nome</h3>
-                    <p class="text-center">Descrição</p>
+                    <h3 class="text-center">Rodolfo Rocha Rodrigues</h3>
+                    <p class="text-center">Estudante de Engenharia de Software pela PUC - Minas</p>
                     <div class="row midias-integrante justify-content-evenly">
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://www.instagram.com/rodolforocha22/">
                             <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://github.com/rodolfo12381">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto"  href="mailto:rodolforrodrigues14@gmail.com">
                             <i class="fas fa-at fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://www.linkedin.com/in/rodolfo-rocha-rodrigues-a834b1205/">
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                     </div>
-                    <p class="text-center">Função</p>
+                    <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
             <div class="col-2 card-integrante position-relative">
@@ -259,8 +256,8 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img/default-image.jpg" alt="">
                 </div>
                 <div class="infos-integrante">
-                    <h3 class="text-center">Nome</h3>
-                    <p class="text-center">Descrição</p>
+                    <h3 class="text-center">Vinicius George dos Santos</h3>
+                    <p class="text-center">Estudante de Engenharia de Software pela PUC - Minas</p>
                     <div class="row midias-integrante justify-content-evenly">
                         <a class="col-auto" href="#">
                             <i class="fab fa-instagram fa-2x"></i>
@@ -275,7 +272,7 @@ if (!isset($_SESSION['user'])) {
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                     </div>
-                    <p class="text-center">Função</p>
+                    <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
             <div class="col-2 card-integrante position-relative">
@@ -283,8 +280,8 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img/default-image.jpg" alt="">
                 </div>
                 <div class="infos-integrante">
-                    <h3 class="text-center">Nome</h3>
-                    <p class="text-center">Descrição</p>
+                    <h3 class="text-center">Mateus Valadares Zambrano Jacques</h3>
+                    <p class="text-center">Estudante de Engenharia de Software pela PUC - Minas</p>
                     <div class="row midias-integrante justify-content-evenly">
                         <a class="col-auto" href="#">
                             <i class="fab fa-instagram fa-2x"></i>
@@ -299,7 +296,7 @@ if (!isset($_SESSION['user'])) {
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                     </div>
-                    <p class="text-center">Função</p>
+                    <p class="text-center">Desenvolvedor</p>
                 </div>
             </div>
         </div>
