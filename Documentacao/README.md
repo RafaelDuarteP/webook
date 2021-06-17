@@ -5,3 +5,7 @@ https://sgapucminasbr-my.sharepoint.com/:w:/g/personal/1299252_sga_pucminas_br/E
 # Apresentação do Projeto
 
 https://docs.google.com/presentation/d/1AbxCJQPIVkd27vheTzhTXhVzApuR90Fb5szlaytILl4/edit?usp=sharing
+
+# Avaliação por pares
+
+https://forms.gle/VpxCSzHU4xNCEdoN8
