@@ -1,6 +1,6 @@
 # WeBook
 
-Uma plataforma para emprestimo e troca de livros entre diferentes pessoas
+Uma plataforma para empréstimo  e doação de livros entres pessoas
 
 ## Alunos integrantes da equipe
 
@@ -16,4 +16,19 @@ Uma plataforma para emprestimo e troca de livros entre diferentes pessoas
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Vesão 1.0.0
+### Acesso ao site: 
+* Realizar cadastro na plataforma
+* Fazer login com email e senha cadastrados
+
+### Cadastro de livros:
+* Acessar página de cadastro de livros e inserir dados do livro
+
+### Pegar livro emprestado ou de doação:
+* Buscar por titulo ou nome do autor
+* Acessar a pagina do livro desejado
+* clicar em quero este livro
+
+### Fazer envio do livro:
+* Postar livro nos correios com os dados fornecidos pelo sistema
+
