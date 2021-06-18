@@ -2,10 +2,10 @@
 
 /* Classe de conexão ao banco de dados */
 
-    $host = "";
-    $user = "";
+    $host = "localhost";
+    $user = "root";
     $senha = "";
-    $banco = "";
+    $banco = "webook";
     $conexao = mysqli_connect($host,$user,$senha,$banco);
 
 ?>

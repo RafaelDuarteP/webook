@@ -35,7 +35,7 @@ VALUES ('$isbn', '$genero', '$titulo', '$edicao', '$paginas', '$idioma', '$ano',
 $request = mysqli_query($conexao, $query);
 $result = mysqli_affected_rows($conexao);
 
-
+print_r($query);
 
 if ($result == true) {
     alerta("Livro cadastrado com sucesso");

@@ -5,17 +5,23 @@ require_once "conexao.php";
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    alerta("Você precisa efetuar login para cadastrar um livro");
+    alerta("Você precisa efetuar login para adquirir um livro");
     echo "<script language='javascript'>window.location='login.html';</script>";
     exit();
 }
 
 $livro = $_POST['livro'];
-$tipo = str_replace('çã','ca',$_POST['tipo']);
+$tipo = $_POST['tipo'];
 $data = date('Y-m-d');
 $user1 = $_POST['user_1'];
 $user2 = $_POST['user_2'];
 
+
+if ($user1 === $user2) {
+    alerta("Você não pode adiquirir o próprio livro");
+    echo "<script language='javascript'>window.location='index.php';</script>";
+    exit();
+}
 
 
 $query = "INSERT INTO `webook`.`operacao` (`TIPO`, `DATA_OP`, `STATUS_OP`, `LIVRO_1`, `USUARIO_1`, `USUARIO_2`) 

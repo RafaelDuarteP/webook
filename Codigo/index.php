@@ -50,13 +50,14 @@ if (!isset($_SESSION['user'])) {
                         <?php
                         if ($_SESSION['user'] != null) :
                         ?>
-                            <div class="col-12 col-md-auto mt-4">
+                            <div class="col-12 col-md-auto mt-4 dropdown">
                                 <a class="link-header" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php echo $nomeUsuario; ?>
                                 </a>
-                                <ul class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
-                                    <li><a href="./logoff.php">Sair</a></li>
-                                </ul>
+                                <div class="dropdown-menu sair" aria-labelledby="dropdownMenuLink">
+                                    <p><a href="./notifications.php">Notificações</a></p>
+                                    <p><a href="./logoff.php">Sair</a></p>
+                                </div>
                             </div>
 
                         <?php
@@ -108,11 +109,11 @@ if (!isset($_SESSION['user'])) {
                 Livros para empréstimo
             </h3>
             <?php
-            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'emprestimo'";
+            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'emprestimo' and status_livro = 'disponivel'";
             $request = mysqli_query($conexao, $query);
             $result = mysqli_fetch_all($request);
 
-            for ($i =0; $i < mysqli_num_rows($request) && $i <10; $i++) {
+            for ($i = 0; $i < mysqli_num_rows($request) && $i < 10; $i++) {
                 $livro = $result[$i];
                 $id_livro = $livro[4];
                 $titulo = $livro[0];
@@ -141,11 +142,11 @@ if (!isset($_SESSION['user'])) {
                 Livros para doação
             </h3>
             <?php
-            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'doacao'";
+            $query = "select titulo, editora, autor, edicao, id_livro from livro where tipo = 'doacao' and status_livro = 'disponivel'";
             $request = mysqli_query($conexao, $query);
             $result = mysqli_fetch_all($request);
 
-            for ($i =0; $i < mysqli_num_rows($request) && $i <10; $i++) {
+            for ($i = 0; $i < mysqli_num_rows($request) && $i < 10; $i++) {
                 $livro = $result[$i];
                 $id_livro = $livro[4];
                 $titulo = $livro[0];
