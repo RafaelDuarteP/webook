@@ -188,22 +188,22 @@ if (!isset($_SESSION['user'])) {
         <div class="row justify-content-evenly">
             <div class="col-10 col-md-5 col-lg-3 mt-3 card-integrante position-relative">
                 <div class="foto-integrante position-absolute">
-                    <img src="./img/default-image.jpg" alt="">
+                    <img src="./img/Rafael.jpg" alt="">
                 </div>
                 <div class="infos-integrante">
                     <h3 class="text-center">Rafael Duarte Pereira</h3>
                     <p class="text-center">Estudante de Engenharia de Software pela PUC - Minas</p>
                     <div class="row midias-integrante justify-content-evenly">
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://www.instagram.com/fael.desenhos/" target="_blank">
                             <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://github.com/RafaelDuarteP" target="_blank">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="mailto:rafaelduarte1234.2015@gmail.com" target="_blank">
                             <i class="fas fa-at fa-2x"></i>
                         </a>
-                        <a class="col-auto" href="#">
+                        <a class="col-auto" href="https://www.linkedin.com/in/rafael-duarte-9087a11bb/" target="_blank">
                             <i class="fab fa-linkedin fa-2x"></i>
                         </a>
                     </div>
