@@ -2,7 +2,7 @@
 
 /* Classe de conexão ao banco de dados */
 
-    $host = "localhost";
+    $host = "127.0.0.1";
     $user = "root";
     $senha = "";
     $banco = "webook";
