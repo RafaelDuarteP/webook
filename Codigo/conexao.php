@@ -2,10 +2,10 @@
 
 /* Classe de conexão ao banco de dados */
 
-    $host = "127.0.0.1";
-    $user = "root";
-    $senha = "";
-    $banco = "webook";
+    $host = "fdb33.awardspace.net";
+    $user = "3878141_webook	";
+    $senha = "webooktis2021";
+    $banco = "3878141_webook";
     $conexao = mysqli_connect($host,$user,$senha,$banco);
 
 ?>
